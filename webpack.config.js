@@ -115,7 +115,9 @@ module.exports = {
             jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery',
-            Vue: 'vue'
+            Vue: 'vue',
+            TweenMax: 'gsap',
+            TimelineMax: 'gsap'
         })
     ],
 

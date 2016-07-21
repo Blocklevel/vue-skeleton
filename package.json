@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "gsap": "^1.19.0",
     "jquery": "^2.2.4",
     "vue": "^1.0.26",
     "vue-resource": "^0.9.3",

@@ -1,10 +1,10 @@
 import { Component, Data, Getter, Action } from 'vue-typed'
 
 @Component({
-	template: '<div>about</div>'
+	template: require('./about.html')
 })
 export default class extends Vue {
 	ready() {
-		alert('about ready')
+		
 	}
 }

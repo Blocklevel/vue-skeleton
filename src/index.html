@@ -17,7 +17,8 @@
 <body>
 
 	<div id="app">
-		<router-view></router-view>
+		<navigation></navigation>
+		<router-view transition-mode="out-in"></router-view>
 	</div>
 
 	<% if (webpackConfig.metadata.isDevServer) { %>
