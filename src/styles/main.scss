@@ -1,3 +1,7 @@
-body {
+@import 'utility/normalize';
+@import 'utility/variables';
 
+body {
+    background-color: $colorBlue;
+    color: $colorWhite;
 }

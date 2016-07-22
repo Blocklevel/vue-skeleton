@@ -1,0 +1,20 @@
+.view-home {
+    display: flex;
+    box-orient: vertical;
+    align-items: center;
+    justify-content:  center;
+    min-height: 100vh;
+
+    .splash {
+        position: relative;
+        width: 880px;
+        padding-left: 450px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

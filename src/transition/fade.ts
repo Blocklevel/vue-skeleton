@@ -1,5 +1,6 @@
 export default Vue.transition('fade', {
 	css: false,
+
 	enter: function (el, done) {
 		TweenMax.fromTo(el, .2, {
 			autoAlpha: 0

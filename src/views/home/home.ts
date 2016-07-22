@@ -1,5 +1,6 @@
-
 import { Component, Data, Getter, Action } from 'vue-typed'
+
+require('./home.scss')
 
 @Component({
 	template: require('./home.html')
