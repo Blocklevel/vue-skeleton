@@ -9,9 +9,9 @@ import { store } from './vuex/store'
 
 import RouterConfig from "./config/route-config"
 
-import Navigation from './components/navigation/navigation'
+import Navigation from './component/navigation/navigation'
 
-require('./styles/main.scss')
+require('./style/main.scss')
 
 Vue.use(VueRouter)
 

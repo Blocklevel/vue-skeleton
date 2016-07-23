@@ -1,5 +1,5 @@
-import Home from '../views/home/home'
-import About from '../views/about/about'
+import Home from '../view/home/home'
+import About from '../view/about/about'
 
 export default class RouterConfig {
 	static get map(): any {
