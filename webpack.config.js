@@ -45,7 +45,7 @@ module.exports = {
 
     resolve: {
         // ensure loader extensions match
-        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.sass', '.html'],
+        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.sass', '.html', 'jpg', 'gif', 'png'],
         fallback: [path.join(__dirname, './node_modules')] //default to node_modules when not found
     },
 
@@ -73,13 +73,28 @@ module.exports = {
 
             // if you add a loader include the resolve file extension above
 
-            { test: /\.(scss|sass)$/, loaders: ['style', 'css', 'sass'] },
+            { test: /\.(scss|sass)$/, loaders: ['style', 'css', 'sass?root=.'] },
 
             { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
 
             // Bootstrap 4
-            { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
+            { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
+
+            {
+                test: /.*\.(gif|png|jpe?g|svg)$/i,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack'
+                ]
+            }
         ]
+    },
+
+    imageWebpackLoader: {
+        pngquant:{
+            quality: "65-90",
+            speed: 4
+        }
     },
 
     // sassResources: path.resolve(__dirname, "./node_modules/bootstrap/scss"),
