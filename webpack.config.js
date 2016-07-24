@@ -121,7 +121,6 @@ module.exports = {
             jquery: 'jquery',
             Vue: 'vue',
             TweenMax: 'gsap',
-            TimelineMax: 'gsap'
         })
     ],
 
