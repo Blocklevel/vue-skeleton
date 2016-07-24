@@ -1,5 +1,14 @@
-// Source Paths
-$pathFont: '../font/';
+// Media queries
+$mediaQueries: (
+    'X_SMALL': '(max-width: 480px)',
+    'SMALL': '(max-width: 768px)',
+    'MEDIUM': '(max-width: 1024px)',
+    'LARGE': '(min-width: 1025px)',
+    'X_LARGE': '(min-width: 1480px)',
+    'XX_LARGE': '(min-width: 1680px)',
+    'MEDIUM_ISOLATE ': '(min-width: 768px) and (max-width: 1023px)',
+    'MOBILE_LANDSCAPE': '(max-device-width: 768px) and (orientation: landscape)'
+);
 
 // Fonts
 $fontBrandonBlack: 'BrandonBlack';
