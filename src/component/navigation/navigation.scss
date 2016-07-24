@@ -1,13 +1,13 @@
 .navigation {
     position: fixed;
-    left: 50px;
+    left: $sizeNavigationOffset;
     top: 50%;
     transform: translate(0, -50%);
-    width: 100%;
+    width: $sizeNavigationWidth;
 
     ul {
         @extend %reset-list;
-        width: 100px;
+        width: 100%;
     }
 
     li {
@@ -24,5 +24,18 @@
     
     .v-link-active {
         text-decoration: underline;
+    }
+
+    @include respond-to('MEDIUM') {
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%, 0);
+        width: 100%;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0 20px;
+        }
     }
 }
