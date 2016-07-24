@@ -1,7 +1,7 @@
 import * as Vue from 'vue'
 import * as Vuex from 'vuex'
 import {MutationTree} from "~vuex/index";
-import IState from '../interfaces/IState'
+import IState from '../interface/IState'
 
 Vue.use(Vuex);
 

@@ -38,6 +38,7 @@ module.exports = {
     // Config for our build files
     output: {
         path: root('dist'),
+        outputPath: root(),
         filename: '[name][hash].bundle.js',
         sourceMapFilename: '[name][hash].map',
         chunkFilename: '[id].chunk.js'
@@ -45,8 +46,12 @@ module.exports = {
 
     resolve: {
         // ensure loader extensions match
-        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.sass', '.html', 'jpg', 'gif', 'png'],
-        fallback: [path.join(__dirname, './node_modules')] //default to node_modules when not found
+        root: root(),
+        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.sass', '.html', 'png', 'jpg', 'jpeg', 'gif', 'svg'],
+        fallback: [path.join(__dirname, './node_modules')],
+        alias: {
+            'asset': root('/src/asset/')
+        }
     },
 
     resolveLoader: {
@@ -62,48 +67,30 @@ module.exports = {
                 exclude: [/\.(spec|e2e)\.ts$/]
             },
 
-            // Support for *.json files.
+            // support for *.json files.
             { test: /\.json$/, loader: 'json-loader' },
 
-            // Support for CSS as raw text
+            // support for CSS as raw text
             { test: /\.css$/, loaders: ['style', 'css'] },
+            { test: /\.(scss|sass)$/, loaders: ['style', 'css', 'sass'] },
 
             // support for .html as raw text
-            { test: /\.html$/, loader: 'raw-loader', exclude: [ root('src/index.html') ] },
+            { test: /\.html$/, loader: 'vue-html-loader', exclude: [ root('src/index.html') ] },
 
-            // if you add a loader include the resolve file extension above
+            // images
+            { test: /\.(jpe?g|gif|svg)$/i, loader: 'file-loader?name=img/img-[hash:6].[ext]' },
+            { test: /\.png$/, loader: "url-loader?limit=10000" },
 
-            { test: /\.(scss|sass)$/, loaders: ['style', 'css', 'sass?root=.'] },
-
-            { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
-
-            // Bootstrap 4
-            { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
-
-            {
-                test: /.*\.(gif|png|jpe?g|svg)$/i,
-                loaders: [
-                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack'
-                ]
-            }
+            // fonts
+            { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' }
         ]
     },
-
-    imageWebpackLoader: {
-        pngquant:{
-            quality: "65-90",
-            speed: 4
-        }
-    },
-
-    // sassResources: path.resolve(__dirname, "./node_modules/bootstrap/scss"),
 
     postcss: [autoprefixer], // <--- postcss
 
     plugins: [
         // clear dist folder
-        new CleanWebpackPlugin(['dist', 'build'], {
+        new CleanWebpackPlugin(['dist'], {
             root: root(),
             verbose: true,
             dry: false
@@ -112,7 +99,7 @@ module.exports = {
         new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
 
         // static assets
-        new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
+        new CopyWebpackPlugin([{ from: 'src/asset', to: 'asset' }]),
 
         // generating html
         new HtmlWebpackPlugin({ template: 'src/index.html' }),
@@ -135,6 +122,11 @@ module.exports = {
             TimelineMax: 'gsap'
         })
     ],
+
+    vue: {
+        root: root()
+    },
+
 
     // our Webpack Development Server config
     devServer: {
