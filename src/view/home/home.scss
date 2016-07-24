@@ -17,4 +17,23 @@
         top: 50%;
         transform: translateY(-50%);
     }
+
+    h2 {
+        display: inline-block;
+        margin: 0;
+        padding-top: 20px;
+        border-top: 2px solid #fff;
+        font: 1.7rem 'BrandonRegular', sans-serif;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin: 0;
+        font: 3.4rem 'BrandonBlack', sans-serif;
+        text-transform: uppercase;
+    }
+
+    p {
+        font: 1.4rem/1.6em 'NeuzeitBook', sans-serif;
+    }
 }

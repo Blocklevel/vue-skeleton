@@ -1,7 +1,15 @@
 @import 'utility/normalize';
+
 @import 'utility/variables';
 
+@import 'type/font';
+
+html {
+    font-size: 62.5%;
+    font-family: 'NeuzeitBook', sans-serif;
+}
+
 body {
-    background-color: $colorBlue;
+    background: $colorBlue url('~asset/image/bg-body.jpg') no-repeat center/cover;
     color: $colorWhite;
 }

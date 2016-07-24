@@ -82,7 +82,7 @@ module.exports = {
             { test: /\.png$/, loader: "url-loader?limit=10000" },
 
             // fonts
-            { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' }
+            { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?name=font/[name].[ext]' }
         ]
     },
 
