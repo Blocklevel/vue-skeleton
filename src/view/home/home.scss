@@ -22,18 +22,18 @@
         display: inline-block;
         margin: 0;
         padding-top: 20px;
-        border-top: 2px solid #fff;
-        font: 1.7rem 'BrandonRegular', sans-serif;
+        border-top: 2px solid $colorWhite;
+        font: 1.7rem $fontBrandonRegular, sans-serif;
         text-transform: uppercase;
     }
 
     h3 {
         margin: 0;
-        font: 3.4rem 'BrandonBlack', sans-serif;
+        font: 3.4rem $fontBrandonBlack, sans-serif;
         text-transform: uppercase;
     }
 
     p {
-        font: 1.4rem/1.6em 'NeuzeitBook', sans-serif;
+        font: 1.4rem/1.6em $fontNeuzeitBook, sans-serif;
     }
 }

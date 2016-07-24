@@ -72,7 +72,7 @@ module.exports = {
 
             // support for CSS as raw text
             { test: /\.css$/, loaders: ['style', 'css'] },
-            { test: /\.(scss|sass)$/, loaders: ['style', 'css', 'sass'] },
+            { test: /\.(scss|sass)$/, loaders: ['style', 'css', 'sass', 'sass-resources'] },
 
             // support for .html as raw text
             { test: /\.html$/, loader: 'vue-html-loader', exclude: [ root('src/index.html') ] },
@@ -85,6 +85,8 @@ module.exports = {
             { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?name=font/[name].[ext]' }
         ]
     },
+
+    sassResources: ['src/style/resource/_variables.scss', 'src/style/resource/_mixin.scss', 'src/style/resource/_extend.scss'],
 
     postcss: [autoprefixer], // <--- postcss
 

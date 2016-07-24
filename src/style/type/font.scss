@@ -1,14 +1,14 @@
 @font-face {
-    font-family: 'BrandonBlack';
+    font-family: $fontBrandonBlack;
     src: url('~asset/font/brandon-grotesque-black.ttf');
 }
 
 @font-face {
-    font-family: 'BrandonRegular';
+    font-family: $fontBrandonRegular;
     src: url('~asset/font/brandon-grotesque-regular.ttf');
 }
 
 @font-face {
-    font-family: 'NeuzeitBook';
+    font-family: $fontNeuzeitBook;
     src: url('~asset/font/neuzeit-slt-std-book.ttf');
 }
