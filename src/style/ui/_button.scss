@@ -1,0 +1,18 @@
+.button {
+    @extend %reset-bmp;
+    outline: none;
+    background: transparent;
+
+    &.primary {
+        transition: background 100ms ease-out;
+        padding: 10px 40px;
+        background-color: $colorOrange;
+        border-radius: 5px;
+        font: 1.2rem $fontNeuzeitBook;
+        color: $colorWhite;
+
+        &:hover {
+            background-color: lighten($colorOrange, 5%);
+        }
+    }
+}
