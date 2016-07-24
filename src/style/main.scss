@@ -1,12 +1,10 @@
 @import 'utility/normalize';
-
-//@import 'resource/variables';
-
 @import 'type/font';
+@import 'layout/layout';
 
 html {
     font-size: 62.5%;
-    font-family: 'NeuzeitBook', sans-serif;
+    font-family: $fontNeuzeitBook, sans-serif;
 }
 
 body {
