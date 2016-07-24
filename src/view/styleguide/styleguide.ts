@@ -1,9 +1,9 @@
 import { Component, Data, Getter, Action } from 'vue-typed'
 
-require('./about.scss')
+require('./styleguide.scss')
 
 @Component({
-	template: require('./about.html')
+	template: require('./styleguide.html')
 })
 export default class extends Vue {
 	ready() {

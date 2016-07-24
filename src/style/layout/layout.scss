@@ -1,1 +1,6 @@
-// Layout
+// Wrapper
+.wrapper {
+    width: 100%;
+    max-width: $sizeSiteWidth;
+    margin: 0 auto;
+}

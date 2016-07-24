@@ -8,16 +8,21 @@
     ul {
         @extend %reset-list;
         width: 100px;
+    }
 
-        li {
-            display: block;
-            margin: 0 0 15px;
-        }
+    li {
+        display: block;
+        margin: 0 0 15px;
+    }
 
-        a {
-            font-size: 1.7rem;
-            text-decoration: none;
-            color: $colorWhite;
-        }
+    a {
+        font-size: 1.7rem;
+        line-height: 1.5em;
+        text-decoration: none;
+        color: $colorWhite;
+    }
+    
+    .v-link-active {
+        text-decoration: underline;
     }
 }

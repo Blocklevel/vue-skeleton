@@ -1,5 +1,5 @@
 import Home from '../view/home/home'
-import About from '../view/about/about'
+import Styleguide from '../view/styleguide/styleguide'
 
 export default class RouterConfig {
 	static get map(): any {
@@ -7,8 +7,8 @@ export default class RouterConfig {
 			'/': {
 				component: Home
 			},
-			'/about': {
-				component: About
+			'/styleguide': {
+				component: Styleguide
 			}
 		}
 	}
