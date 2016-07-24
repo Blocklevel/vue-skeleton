@@ -2,20 +2,27 @@
     display: flex;
     box-orient: vertical;
     align-items: center;
-    justify-content:  center;
+    justify-content: center;
     min-height: 100vh;
 
-    .splash {
+    .wrapper {
         position: relative;
-        width: 880px;
-        padding-left: 450px;
+        display: flex;
+        box-orient: vertical;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .logo {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        flex: 1;
+        max-width: 351px;
+        margin-right: 80px;
+    }
+
+    .text {
+        flex: 1;
+        text-align: left;
     }
 
     h2 {
@@ -35,5 +42,15 @@
 
     p {
         font: 1.4rem/1.6em $fontNeuzeitBook, sans-serif;
+    }
+
+    @include respond-to('SMALL') {
+        .wrapper {
+            display: block;
+        }
+
+        .logo {
+            margin: 30px auto;
+        }
     }
 }
