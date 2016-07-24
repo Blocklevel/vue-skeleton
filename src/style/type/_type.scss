@@ -1,0 +1,42 @@
+// Headings
+.heading {
+    &.h1 {
+        font: 3.2rem $fontBrandonBlack;
+        text-transform: uppercase;
+        color: $colorWhite;
+    }
+
+    &.h2 {
+        font: 2.8rem $fontBrandonBlack;
+        text-transform: uppercase;
+        color: $colorWhite;
+    }
+
+    &.h3 {
+        font: 2.4rem $fontBrandonRegular;
+        text-transform: uppercase;
+        color: $colorWhite;
+    }
+
+    &.h4 {
+        font: 1.8rem $fontBrandonRegular;
+        text-transform: uppercase;
+        color: $colorWhite;
+    }
+}
+
+// Copy
+.copy {
+    &.c1 {
+        font: 1.6rem $fontNeuzeitBook;
+        color: $colorWhite;
+
+        a {
+            color: currentColor;
+        }
+    }
+
+    &.c2 {
+
+    }
+}
