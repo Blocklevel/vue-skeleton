@@ -10,6 +10,6 @@ html {
 }
 
 body {
-    background: $colorBlue url('~asset/image/bg-body.jpg') no-repeat center/cover;
+    background: $colorBlue url('~asset/image/bg-body.jpg') no-repeat center top/100% auto;
     color: $colorWhite;
 }

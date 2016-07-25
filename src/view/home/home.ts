@@ -5,12 +5,15 @@ require('./home.scss')
 @Component({
 	template: require('./home.html')
 })
-export default class extends Vue {
-	created() {
+export default class extends Vue
+{
+	created()
+	{
 		console.log('home created')
 	}
 
-	ready() {
+	ready()
+	{
 		console.log('home ready')
 	}
 }

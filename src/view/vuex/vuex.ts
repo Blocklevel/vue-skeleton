@@ -8,19 +8,21 @@ require('./vuex.scss')
 @Component({
 	template: require('./vuex.html')
 })
-export default class extends Vue {
-
+export default class extends Vue
+{
 	@Getter(actions.getCount)
 	count: number
 
 	@Action(actions.addCount)
 	increment(num:number) { }
 
-	add() {
+	add()
+	{
 		this.increment(5);
 	}
 
-	ready() {
+	ready()
+	{
 		console.log(this)
 	}
 

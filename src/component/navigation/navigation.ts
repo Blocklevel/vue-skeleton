@@ -6,8 +6,10 @@ require('./navigation.scss')
 	name: 'navigation',
 	template: require('./navigation.html')
 })
-export default class extends Vue {
-	ready() {
+export default class extends Vue
+{
+	ready()
+	{
 		
 	}
 }

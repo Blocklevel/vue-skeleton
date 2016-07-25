@@ -5,8 +5,10 @@ require('./styleguide.scss')
 @Component({
 	template: require('./styleguide.html')
 })
-export default class extends Vue {
-	ready() {
+export default class extends Vue
+{
+	ready()
+	{
 		
 	}
 }
