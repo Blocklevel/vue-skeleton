@@ -1,25 +1,37 @@
+import App from '../view/app'
 import Home from '../view/home/home'
 import Styleguide from '../view/styleguide/styleguide'
 import Vuex from '../view/vuex/vuex'
 import Resource from '../view/resource/resource'
+import Validation from '../view/validation/validation'
 
 export default class RouterConfig {
 	static get map(): any {
 		return {
 			'/': {
-				component: Home
-			},
+				component: App,
 
-			'/styleguide': {
-				component: Styleguide
-			},
+				subRoutes: {
+					'/': {
+						component: Home
+					},
 
-			'/vuex': {
-				component: Vuex
-			},
+					'/styleguide': {
+						component: Styleguide
+					},
 
-			'/resource': {
-				component: Resource
+					'/vuex': {
+						component: Vuex
+					},
+
+					'/resource': {
+						component: Resource
+					},
+
+					'/validation': {
+						component: Validation
+					}
+				}
 			}
 		}
 	}

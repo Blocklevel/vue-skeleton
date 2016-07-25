@@ -1,0 +1,21 @@
+<div class="view view-validation" transition="fade">
+	<div class="wrapper">
+
+		<h1 class="heading h1">Validation</h1>
+
+		<validator name="validation">
+			<form novalidate>
+				<fieldset class="row">
+					<label class="label">Comment</label>
+					<input class="input default" type="text" v-validate:comment="{ minlength: 16, maxlength: 128 }">
+					<ul class="errors">
+						<li v-show="$validation.comment.minlength">Your comment is too short.</li>
+						<li v-show="$validation.comment.maxlength">Your comment is too long.</li>
+					</ul>
+				</fieldset>
+				<button class="button primary" type="submit" value="send" v-show="$validation.valid">Submit</button>
+			</form>
+		</validator>
+
+	</div>
+</div>
