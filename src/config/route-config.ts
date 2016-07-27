@@ -5,8 +5,11 @@ import Vuex from '../view/vuex/vuex'
 import Resource from '../view/resource/resource'
 import Validation from '../view/validation/validation'
 
-export default class RouterConfig {
-	static get map(): any {
+export default class RouterConfig
+{
+	// Root route contains an App component, this way the store can be applied globally
+	static get map(): any
+	{
 		return {
 			'/': {
 				component: App,
