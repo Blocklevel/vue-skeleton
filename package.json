@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
     "clean": "rm -rf dist",
+    "component": "node task/component/create-vue-component.js",
     "build": "webpack",
     "postinstall": "typings install"
   },
@@ -41,7 +42,6 @@
     "vue-resource": "^0.9.3",
     "vue-router": "^0.7.13",
     "vue-typed": "0.0.1",
-    "vue-typescript": "^0.5.2",
     "vue-validator": "^2.1.5",
     "vuex": "^1.0.0-rc.2"
   }
