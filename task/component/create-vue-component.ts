@@ -1,9 +1,13 @@
-import progress = require('progress');
+/// <reference path="../../typings/globals/node/index.d.ts" />
 import fs = require('fs');
-import InteractiveBaseTask from "../InteractiveBaseTask";
-declare var __dirname;
+import InteractiveBaseTask from "../src/InteractiveBaseTask";
 
 export default class CreateVueComponent extends InteractiveBaseTask {
+
+	/*
+		build script with:
+	    tsc create-vue-component.ts --module commonjs
+	 */
 
 	constructor(private inputFolder, private outputFolder, args:Array<string>, protected options:{} = null)
 	{
@@ -18,19 +22,17 @@ export default class CreateVueComponent extends InteractiveBaseTask {
 
 	protected run(args:IProps):void
 	{
-
 		var path:string = `${this.outputFolder}/${args.name}`;
 		this.createFolder(path);
 
 		let errors:number = 0;
 		let done:number = 0;
 
-		['html', 'scss', 'ts'].forEach((type:string, index:int, origin:Array<string>)=>
+		['html', 'scss', 'ts'].forEach((type:string, index:number, origin:Array<string>)=>
 		{
 			let blueprint:string = fs.readFileSync(`${__dirname}/${this.inputFolder}/component.${type}`, 'utf8');
 			for(var key in args)blueprint = blueprint.split(`$${key}`).join(`${args[key]}`);
 			let destination:string = `${path}/${args.name}.${type}`;
-
 
 			fs.exists(destination, (exists:boolean)=>{
 				if(exists)
@@ -53,7 +55,6 @@ export default class CreateVueComponent extends InteractiveBaseTask {
 						this.onComplete(origin.length, done, errors);
 					});
 				}
-
 			})
 		});
 	}
@@ -86,7 +87,6 @@ new CreateVueComponent(
 			description:"enter some default text for in the component",
 			manditory:false,
 			placeholder:"component $name is successfully created..."
-
 		}
 	}
 );

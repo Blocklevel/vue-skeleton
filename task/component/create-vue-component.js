@@ -1,13 +1,17 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+/// <reference path="../../typings/globals/node/index.d.ts" />
 var fs = require('fs');
-var InteractiveBaseTask_1 = require("../InteractiveBaseTask");
+var InteractiveBaseTask_1 = require("../src/InteractiveBaseTask");
 var CreateVueComponent = (function (_super) {
     __extends(CreateVueComponent, _super);
+    /*
+        build script with:
+        tsc create-vue-component.ts --module commonjs
+     */
     function CreateVueComponent(inputFolder, outputFolder, args, options) {
         if (options === void 0) { options = null; }
         _super.call(this, args, options);
@@ -61,8 +65,7 @@ var CreateVueComponent = (function (_super) {
         }
     };
     return CreateVueComponent;
-}(InteractiveBaseTask_1["default"]));
-exports.__esModule = true;
+})(InteractiveBaseTask_1["default"]);
 exports["default"] = CreateVueComponent;
 new CreateVueComponent('/blueprint', './src/component', process.argv, {
     name: {
@@ -84,5 +87,4 @@ var IProps = (function () {
     function IProps() {
     }
     return IProps;
-}());
-//# sourceMappingURL=create-vue-component.js.map
+})();
