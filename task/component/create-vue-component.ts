@@ -87,6 +87,12 @@ new CreateVueComponent(
 			description:"enter some default text for in the component",
 			manditory:false,
 			placeholder:"component $name is successfully created..."
+		},
+
+		transition:{
+			description:"enter a transition type, default is 'fade'",
+			manditory:false,
+			placeholder:"fade"
 		}
 	}
 );
