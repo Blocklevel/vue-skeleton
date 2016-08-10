@@ -1,9 +1,9 @@
-import App from '../view/app'
-import Home from '../view/home/home'
-import Styleguide from '../view/styleguide/styleguide'
-import Vuex from '../view/vuex/vuex'
-import Resource from '../view/resource/resource'
-import Validation from '../view/validation/validation'
+import App from '../page/app'
+import Home from '../page/home/home'
+import Styleguide from '../page/styleguide/styleguide'
+import Vuex from '../page/vuex/vuex'
+import Resource from '../page/resource/resource'
+import Validation from '../page/validation/validation'
 
 export default class RouterConfig
 {
